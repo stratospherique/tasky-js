@@ -1,7 +1,11 @@
 import React from 'react';
+import { HomeDiv } from '../styled/containers';
 
 const Home = () => (
-    <h1>Welcome home</h1>
+    <HomeDiv>
+        <h1>Welcome Stranger</h1>
+        <p>Any Tasks for tpday</p>
+    </HomeDiv>
 )
 
 export default Home;

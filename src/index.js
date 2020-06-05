@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux'
+import {createStore} from 'redux';
 import * as serviceWorker from './serviceWorker';
 import './assets/css/index.css';
+import globalReducer from './reducers/index';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={createStore(globalReducer)} >
+      <App />
+  </Provider>,
   document.getElementById('root'),
 );
 
