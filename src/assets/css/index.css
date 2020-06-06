@@ -44,7 +44,7 @@
   background-color: #fff;
   border-radius: 1rem;
   position: relative;
-  left: calc(50% - 12rem);
+  left: calc(50% - 16rem);
   top: calc(50% - 9rem);
   display: flex;
   flex-direction: column;
