@@ -39,12 +39,25 @@
 }
 
 .task-form > form {
+  width: 32rem;
   height: 18rem;
-  width: 24rem;
-  border: 1px solid;
+  background-color: #fff;
+  border-radius: 1rem;
   position: relative;
   left: calc(50% - 12rem);
   top: calc(50% - 9rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.task-form .button {
+  height: 2.5rem;
+  width: 12rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
 
 .navbar {
@@ -63,20 +76,43 @@
   align-items: center;
 }
 
-.navbar > button {
+.navbar > .button {
   height: 2.5rem;
   width: 12rem;
-  background: #9D76F0;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-  border-radius: 13px;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.2rem;
+}
+
+.button {
+  background: #9D76F0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: .8rem;
   color: #fff;
   transition: background-color .5s ease;
 }
 
-.navbar > button:hover {
+.button:hover {
   background: rgb(227, 222, 240);
   color: #9D76F0;
+}
+
+.input-field > input {
+  width: 15rem;
+  height: 2.2rem;
+  border: 1px solid rgb(222, 221, 223);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.input-field > p {
+  color: rgb(151, 55, 55);
+  font-weight: 500;
+}
+
+.input-field > p::before {
+  content: '*';
+  display: inline-block;
+  margin-left: .5rem;
+  margin-top: .5rem;
 }

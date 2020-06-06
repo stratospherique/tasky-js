@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { HIDE_FORM } from '../actions';
+import { Heading } from './styled/styledParts';
 
 const FormContainer = props => {
-
   const [formState, setFormState] = useState({
     candidate_email: 'ahmed.mahfoudh1991@gmail.com',
     label: null,
@@ -51,17 +51,22 @@ const FormContainer = props => {
   return (
     <div className="task-form" onMouseDown={handleClick}>
       <form name="task-form" onSubmit={handleSubmit}>
-        <h2>What do you want to do ?</h2>
-        {formErrors.isInvalid
-          ? <p>{formErrors.message}</p>
-          : null}
-        <div>
+        <Heading
+          type="secondary"
+        >
+          What do you want to do ?
+        </Heading>
+        <div className="input-field">
           <input type="text" name="task-name" onChange={handleLabelChange} />
+          {formErrors.isInvalid
+            ? <p>{formErrors.message}</p>
+            : null}
         </div>
-        <button type="submit">I&apos;ll do it</button>
+        <button className="button" type="submit">+ I&apos;ll do it</button>
       </form>
     </div>
-)}
+  );
+};
 
 const mapStateToProps = state => ({
   visible: state.formVisible,

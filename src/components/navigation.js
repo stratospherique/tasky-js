@@ -34,7 +34,8 @@ const Navigation = ({toggleForm}) => (
         isExact={false}
       />
     </nav>
-    <button 
+    <button
+      className="button"
       onClick={toggleForm}
       type="button"
     >
