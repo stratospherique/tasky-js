@@ -26,16 +26,21 @@ const Done = () => {
     
     return (
         <DoneDiv>
-            <Heading type="primary">
+            <Heading 
+                type="primary"
+                color="#777A87">
                 Yey !! we’re rockin’
             </Heading>
             {isLoading ? <span>Loading...</span> :
             <>
-                <Heading type="secondary">
+                <Heading 
+                    type="secondary"
+                    color="#777A87">
                     We did one hell of a job right there !! Bravo six, going dark.
                 </Heading>
-                <Heading>
-                    {`${taskList.length} tasks are crushed`}
+                <Heading
+                    color="#9D76F0">
+                    {`${taskList.length} Tasks are crushed`}
                 </Heading>
                 <ul>
                     {taskList.length > 0 ?

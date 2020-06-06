@@ -21,7 +21,7 @@ const Navigation = ({toggleForm}) => (
       />
       <NavBtn
         activeClass="activeTab"
-        label="Tasks"
+        label="My Tasks"
         image={tasksImage}
         path="/tasks"
         isExact={false}

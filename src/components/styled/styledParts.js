@@ -52,6 +52,8 @@ const Heading = styled(Headings)`
     font-weight: ${props => props.type === 'primary' ? 'bold;' : props.type === 'secondary' ? '500;' : '300;'}
     font-size: ${props => props.type === 'primary' ? '2.5rem;' : props.type === 'secondary' ? '1.5rem;' : '1.2rem;'}
     line-height: ${props => props.type === 'primary' ? '50px;' : props.type === 'secondary' ? '31px;' : '22px;'}
+    margin-bottom: ${props => props.type === 'primary' ? '1rem;' : props.type === 'secondary' ? '2.5rem;' : '1.5rem;'}
+    color: ${props => props.color ? props.color : 'black'};
 `;
 
-export { Logo, NavBtn, Heading }
+export { Logo, NavBtn, Heading };

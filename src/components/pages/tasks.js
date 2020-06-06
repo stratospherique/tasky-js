@@ -36,16 +36,21 @@ const Tasks = (props) => {
     
     return (
         <TasksDiv>
-            <Heading type="primary">
+            <Heading 
+                type="primary"
+                color="#777A87">
                 Feeling Tasky
             </Heading>
             {isLoading ? <span>Loading...</span> :
             <>
-            <Heading type="secondary">
+            <Heading 
+                type="secondary"
+                color="#777A87">
                 It's time to clear some of those tasks !! Don't you think ?
             </Heading>
-            <Heading>
-                {`${taskList.length} tasks are waiting`}
+            <Heading
+                color="#9D76F0">
+                {`${taskList.length} Tasks are waiting`}
             </Heading>
             <ul>
                 {taskList.length > 0 ?
