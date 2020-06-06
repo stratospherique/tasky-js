@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import { TasksDiv } from '../styled/containers';
+import { Heading } from '../styled/styledParts';
 import TaskCheck from '../taskCheck';
 
 const EMAIL = 'ahmed.mahfoudh1991@gmail.com';
@@ -35,13 +36,23 @@ const Tasks = (props) => {
     
     return (
         <TasksDiv>
-            <h2>Uncompleted Tasks</h2>
+            <Heading type="primary">
+                Feeling Tasky
+            </Heading>
             {isLoading ? <span>Loading...</span> :
+            <>
+            <Heading type="secondary">
+                It's time to clear some of those tasks !! Don't you think ?
+            </Heading>
+            <Heading>
+                {`${taskList.length} tasks are waiting`}
+            </Heading>
             <ul>
                 {taskList.length > 0 ?
-                taskList.map((ele, index) => <TaskCheck key={ele._id} labelTag={ele.label} taskID={ele._id} status={ele.status} />) :
+                taskList.map((ele) => <TaskCheck key={ele._id} labelTag={ele.label} taskID={ele._id} status={ele.status} />) :
                 <li>No todo tasks!!</li>}
             </ul>
+            </>
              }
         </TasksDiv>
     );

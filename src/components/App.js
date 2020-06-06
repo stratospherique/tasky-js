@@ -6,13 +6,12 @@ import Home from './pages/home';
 import Tasks from './pages/tasks';
 import Done from './pages/done';
 import NotFound from './pages/notFound';
-import {MainContainer} from './styled/containers';
-import {BrowserRouter} from 'react-router-dom';
+import { MainContainer } from './styled/containers';
+import { BrowserRouter } from 'react-router-dom';
 import FormContainer from './form';
 
 const App = (props) => {
 
-  console.log(props.formVisible);
   return (
     <BrowserRouter>
       <Navigation />

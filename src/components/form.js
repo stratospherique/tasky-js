@@ -10,23 +10,30 @@ const FormContainer = (props) => {
         label: null,
     })
 
+    const [formErrors, setFormErrors] = useState({
+        message: null,
+        isInvalid: false
+    });
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(JSON.stringify(formState))
         axios({
             method: 'post',
             url: '/task',
-        headers:{
-            "Content-Type": "application/json",
-        },
-        data: JSON.stringify(formState)
+            headers:{
+                "Content-Type": "application/json",
+            },
+            data: JSON.stringify(formState)
         })
         .then((response) => {
-            console.log(response.data);
             props.toggleInvisible();
         })
         .catch((err) => {
-            console.dir(err)
+            setFormErrors({
+                ...formErrors,
+                isInvalid: !err.response.data.sucess,
+                message: err.response.data.message
+            })
         })
     }
 
@@ -35,16 +42,21 @@ const FormContainer = (props) => {
             ...formState,
             label: e.target.value
         })
-        
+    }
+    
+    const handleClick = (e) => {
+        if (e.target.nodeName === 'DIV')  props.toggleInvisible();
     }
 
     return (
-    <div  className="task-form">
+    <div  className="task-form" onMouseDown={handleClick}>
         <form name="task-form" onSubmit={handleSubmit}>
-            <h2>Add Task</h2>
+            <h2>What do you want to do ?</h2>
+            {formErrors.isInvalid ? 
+            <p>{formErrors.message}</p> :
+            null}
             <div>
-                <label htmlFor="task-name">What Do you want to do</label>
-                <input type="text" id="task-name" onChange={handleLabelChange} />
+                <input type="text" name="task-name" onChange={handleLabelChange} />
             </div>
             <button type="submit">I'll do it</button>
         </form>

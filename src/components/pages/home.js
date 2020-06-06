@@ -1,10 +1,15 @@
 import React from 'react';
 import { HomeDiv } from '../styled/containers';
+import { Heading } from '../styled/styledParts';
 
 const Home = () => (
     <HomeDiv>
-        <h1>Welcome Stranger</h1>
-        <p>Any Tasks for tpday</p>
+        <Heading type="primary">
+            Welcome Stranger
+        </Heading>
+        <Heading type="secondary">
+            Any Tasks for today
+        </Heading>
     </HomeDiv>
 )
 
