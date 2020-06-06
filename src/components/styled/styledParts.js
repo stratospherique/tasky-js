@@ -12,32 +12,48 @@ const Logo = styled.div`
 `;
 
 const NavTab = ({children, className, activeClass, label, image, path, isExact}) => (
-    <NavLink to={path} exact={isExact} className={className} activeClassName={activeClass}>
-        <img src={image} alt="label" />
-        <span>
-            {label}
-        </span>
-        {children}
-    </NavLink>
+  <NavLink to={path} exact={isExact} className={className} activeClassName={activeClass}>
+    <img src={image} alt={label} />
+    <span>
+      {label}
+    </span>
+    {children}
+  </NavLink>
 )
 
 const NavBtn = styled(NavTab)`
     border: 1px solid;
     display: flex;
-    justify-content: space-around;
-    width: 5rem;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 2.8rem;
+    text-decoration: none;
+    border-radius: .5rem;
+
+    color: #E7E7ED;
+    font-weight: 500;
+    font-size: 1rem;
+
+    & > img {
+        margin-right: .4rem;
+        height: 1.1rem;
+        opacity: .2;
+    }
 `;
 
 const Headings = ({children, className}) => (
-    <h4 className={className}>
-        {children}
-    </h4>
-)
+  <h4 className={className}>
+    {children}
+  </h4>
+);
 
 const Heading = styled(Headings)`
-    font-weight: ${props => props.type === 'primary' ? 'bold;' : props.type === 'secondary' ? '500;' : '300;'}
-    font-size: ${props => props.type === 'primary' ? '40px;' : props.type === 'secondary' ? '25px;' : '18px;'}
-    line-height: ${props => props.type === 'primary' ? '50px;' : props.type === 'secondary' ? '31px;' : '22px;'}
+    font-weight: ${props => (props.type === 'primary' ? 'bold;' : props.type === 'secondary' ? '500;' : '300;')}
+    font-size: ${props => (props.type === 'primary' ? '2.5rem;' : props.type === 'secondary' ? '1.5rem;' : '1.2rem;')}
+    line-height: ${props => (props.type === 'primary' ? '50px;' : props.type === 'secondary' ? '31px;' : '22px;')}
+    margin-bottom: ${props => (props.type === 'primary' ? '1rem;' : props.type === 'secondary' ? '2.5rem;' : '1.5rem;')}
+    color: ${props => (props.color ? props.color : 'black')};
 `;
 
-export { Logo, NavBtn, Heading }
+export { Logo, NavBtn, Heading };

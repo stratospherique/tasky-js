@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import formVisibilityReducer from './formVisiblityReducer';
 
 const globalReducer = combineReducers({
