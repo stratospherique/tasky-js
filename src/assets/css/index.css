@@ -1,8 +1,40 @@
 
 @import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+.activeTab {
+  color: red;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.task-form {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(114, 108, 108, 0.322);
+  position: absolute;
+  z-index: 1000;
+}
+
+.task-form > form {
+  height: 18rem;
+  width: 24rem;
+  border: 1px solid;
+  position: relative;
+  left: calc(50% - 12rem);
+  top: calc(50% - 9rem);
 }
