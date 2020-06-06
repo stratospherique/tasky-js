@@ -39,4 +39,6 @@ const DoneDiv = styled.div`
 `;
 
 
-export { MainContainer, HomeDiv, DoneDiv, TasksDiv };
+export {
+  MainContainer, HomeDiv, DoneDiv, TasksDiv 
+};

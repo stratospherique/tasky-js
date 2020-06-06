@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { Logo, NavBtn } from './styled/styledParts';
 import { DISPLAY_FORM } from '../actions/index';
 import homeImage from '../assets/img/home.png';

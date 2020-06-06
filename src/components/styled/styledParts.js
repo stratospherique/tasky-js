@@ -35,9 +35,9 @@ const Headings = ({children, className}) => (
 )
 
 const Heading = styled(Headings)`
-    font-weight: ${props => props.type == 'primary' ? 'bold;' : props.type == 'secondary' ? '500;' : '300;'}
-    font-size: ${props => props.type == 'primary' ? '40px;' : props.type == 'secondary' ? '25px;' : '18px;'}
-    line-height: ${props => props.type == 'primary' ? '50px;' : props.type == 'secondary' ? '31px;' : '22px;'}
+    font-weight: ${props => props.type === 'primary' ? 'bold;' : props.type === 'secondary' ? '500;' : '300;'}
+    font-size: ${props => props.type === 'primary' ? '40px;' : props.type === 'secondary' ? '25px;' : '18px;'}
+    line-height: ${props => props.type === 'primary' ? '50px;' : props.type === 'secondary' ? '31px;' : '22px;'}
 `;
 
 export { Logo, NavBtn, Heading }
