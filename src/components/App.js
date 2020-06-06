@@ -14,10 +14,10 @@ const App = ({ formVisible }) => (
     <Navigation />
     <MainContainer>
       <Switch>
-        <Route path="/" exact component={ Home } />
-        <Route path="/tasks" exact component={ Tasks } />
-        <Route path="/done" exact component={ Done } />
-        <Route path="*" component={ NotFound } />
+        <Route path="/" exact component={Home} />
+        <Route path="/tasks" exact component={Tasks} />
+        <Route path="/done" exact component={Done} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </MainContainer>
     {formVisible ? <FormContainer /> : null}
