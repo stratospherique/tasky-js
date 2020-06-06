@@ -13,7 +13,7 @@ const Logo = styled.div`
 
 const NavTab = ({children, className, activeClass, label, image, path, isExact}) => (
     <NavLink to={path} exact={isExact} className={className} activeClassName={activeClass}>
-        <img src={image} alt="label" />
+        <img src={image} alt={label} />
         <span>
             {label}
         </span>
@@ -24,8 +24,22 @@ const NavTab = ({children, className, activeClass, label, image, path, isExact})
 const NavBtn = styled(NavTab)`
     border: 1px solid;
     display: flex;
-    justify-content: space-around;
-    width: 5rem;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 2.8rem;
+    text-decoration: none;
+    border-radius: .5rem;
+
+    color: #E7E7ED;
+    font-weight: 500;
+    font-size: 1rem;
+
+    & > img {
+        margin-right: .4rem;
+        height: 1.1rem;
+        opacity: .2;
+    }
 `;
 
 const Headings = ({children, className}) => (
